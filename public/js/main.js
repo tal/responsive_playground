@@ -25,5 +25,13 @@
 
   });
 
+  app.view('test.user', function(test) {
+    var TestUser = Loblaw.Model.extend({});
+
+    return TestUser;
+  });
+
   app.init();
+
+  // app.test.views.user === TestUser #=> true
 })();
