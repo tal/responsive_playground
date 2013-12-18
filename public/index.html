@@ -36,6 +36,20 @@
             </div>
         </div>
 
+        <script type="text/html+underscore" lb-template="user_small">
+            <div class="user">Heyo small {{name}}</div>
+        </script>
+
+        <div lb-model="user"
+             lb-view="user"
+             lb-template="user_small"
+             lb-attrs='[{"name": "Tal"},{"name":"Allie"}]'></div>
+
+
+        <script type="text/html+underscore" lb-model="user" lb-template lb-view="user">
+            <div class="user">Heyo inline {{name}}</div>
+        </script>
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
