@@ -31,7 +31,9 @@
                 <div class="blog" lb-model="blog">Blog</div>
             </div>
 
+            <!-- pull in a model from a different module explicitly -->
             <div class="user" lb-model="some_other_module.user">
+                <!-- This view automatically gets the model from the parent element -->
                 <h2 lb-view="test">Allie</h2>
             </div>
         </div>
@@ -43,9 +45,11 @@
         <div lb-model="user"
              lb-view="user"
              lb-template="user_small"
-             lb-attrs='[{"name": "Tal"},{"name":"Allie"}]'></div>
+             lb-attrs='[{"name": "Tal"},{"name":"Allie"}]'>
+            <!-- The template is rendered into here twice with the array of attributes -->
+        </div>
 
-
+        <!-- renders the template inline with the given view/model/attrs -->
         <script type="text/html+underscore" lb-model="user" lb-template lb-view="user">
             <div class="user">Heyo inline {{name}}</div>
         </script>
