@@ -1,6 +1,21 @@
 (function() {
   'use strict';
 
+  KeyBinder.body();
+  var input = new KeyBinder(document.getElementById('test_input'));
+
+  input.contentChange(function(ev) {
+    // console.log(ev);
+  });
+
+  input.disallowCharacters('aAb');
+
+  input.transformCharacters('()', '-_', function(ev) {
+    console.log('transformed', ev);
+  });
+
+  return;
+
   window.app = new Loblaw();
 
   app.module('test', function(test) {
